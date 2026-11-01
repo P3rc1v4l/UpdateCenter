@@ -101,7 +101,7 @@ jobs:
 
       - name: Sign scripts (Azure Trusted Signing)
         if: steps.stage.outputs.mode == 'ts'
-        uses: azure/trusted-signing-action@v0.5.0
+        uses: azure/trusted-signing-action@v2.0.0
         with:
           azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -129,7 +129,7 @@ jobs:
 
       - name: Sign file catalog (Azure Trusted Signing)
         if: steps.stage.outputs.mode == 'ts'
-        uses: azure/trusted-signing-action@v0.5.0
+        uses: azure/trusted-signing-action@v2.0.0
         with:
           azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -201,7 +201,7 @@ jobs:
 
       - name: Sign Setup.exe (Azure Trusted Signing)
         if: steps.stage.outputs.mode == 'ts' && github.event_name == 'workflow_dispatch' && inputs.build_type != 'check-only'
-        uses: azure/trusted-signing-action@v0.5.0
+        uses: azure/trusted-signing-action@v2.0.0
         with:
           azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
